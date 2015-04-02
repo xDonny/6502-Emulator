@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>
+	6502 Emulator w/ C64 TextMode Simulator - Donny Bridgen
+</title>
+<style>
+body
+{
+	font-family:"Lucida Console", Monaco, monospace;
+}
+#output
+{
+width:100px;
+float:left;
+overflow:hidden;
+}
+#canvas
+{
+width:320px;
+height:200px;
+}
+#debugBox
+{
+float:right;
+width:210px;
+display:block;
+margin-left:auto;
+margin-right:auto;
+overflow:hidden;
+}
+td
+{
+padding-left:1em;
+}
+</style>
+</head>
+<body>
+<div style="text-align:center;margin-bottom:1em;">
+<button id="assemble" onclick="zoomIn()">Zoom In</button>
+<button id="assemble" onclick="zoomOut()">Zoom Out</button>
+</div>
+<div style="text-align:Center;">
+<canvas id="canvas" >
+Please get a good browser
+</canvas>
+</div>
+<div style="text-align:center">
+<div style="width:320px;overflow:hidden;display:block;margin-left:auto;margin-right:auto;">
+<p id="output">
+<span id="status_register"></span>
+</p>
+<p id="debugBox">
+</p>
+</div>
+<div>
+<textarea style="width:320px;height:150px;font-size:11px;" id="assemblerInput">
+</textarea>
+</br>
+<button id="assemble" onclick="decodeTextArea(assemblerInput)">Assemble</button>
+<button id="assemble" onclick="runProgram()">Run</button>
+<button id="assemble" onclick="stopProgram()">Stop</button>
+<button id="assemble" onclick="reset()">Reset</button>
+<button id="assemble" onclick="seeDecode(debugBox)">Debug</button>
+</div>
+</div>
+<script src="rom.js"></script>
+<script src="6502.js"></script>
+<script src="screen.js"></script>
+<script>
+var width=32;
+var height = 20;
+var zoom = 10;
+
+function zoomIn()
+{
+	zoom++;
+	canvas.style.width = width * zoom;
+	canvas.style.height = height*zoom;
+}
+
+function zoomOut()
+{
+	zoom--;
+	canvas.style.width = width * zoom;
+	canvas.style.height = height * zoom;
+
+}
+</script>
+</body>
+</html>
