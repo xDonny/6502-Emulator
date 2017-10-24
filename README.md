@@ -25,4 +25,4 @@ The screen region can be found in dec 2049 to dec 3049. This is because in text-
 ## Character map
 The character map is from location dec 3050 to dec 3306, it is largely unused but points to the first byte of each character.
 
-If you don't want to pull the repo you can find a live version <a href="http://www.donnybridgen.ca/6502/index.html" target="_blank">here</a>
+
